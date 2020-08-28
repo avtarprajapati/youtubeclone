@@ -1,21 +1,21 @@
-import React from 'react';
-import youtube from '../api/youtube';
-import SearchBar from './SearchBar';
-import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
-import Loading from './Loading';
+import React from "react";
+import youtube from "../api/youtube";
+import SearchBar from "./SearchBar";
+import VideoList from "./VideoList";
+import VideoDetail from "./VideoDetail";
+import Loading from "./Loading";
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onFormSubmit('Cartoon');
+    this.onFormSubmit("Cartoon");
   }
 
   onFormSubmit = async (term) => {
-    const response = await youtube.get('/search', {
+    const response = await youtube.get("/search", {
       params: {
-        part: 'snippet',
+        part: "snippet",
         maxResults: 5,
         key: process.env.REACT_APP_KEY,
         q: term
@@ -37,7 +37,7 @@ class App extends React.Component {
       return <Loading />;
     } else {
       return (
-        <div className="ui row">
+        <div className="doubling two column row">
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
           </div>
@@ -54,7 +54,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: '10px' }}>
+      <div className="ui container" style={{ marginTop: "10px" }}>
         <SearchBar onFormSubmit={this.onFormSubmit} />
         <div className="ui grid">{this.renderLoading()}</div>
       </div>
