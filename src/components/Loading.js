@@ -1,5 +1,5 @@
-import React from 'react';
-import Skeleton from 'react-loading-skeleton';
+import React from "react";
+import Skeleton from "react-loading-skeleton";
 
 const CardLoading = () => {
   return Array(5)
@@ -9,7 +9,7 @@ const CardLoading = () => {
         <div className="video-item item" key={i}>
           <Skeleton width={100} height={100} />
           <div className="content">
-            <div className="ui header" style={{ marginLeft: '5px' }}>
+            <div className="ui header" style={{ marginLeft: "5px" }}>
               <Skeleton width={200} count={3} />
             </div>
           </div>
@@ -20,7 +20,7 @@ const CardLoading = () => {
 
 const Loading = () => {
   return (
-    <div className="ui row">
+    <div className="doubling two column row">
       <div className="eleven wide column">
         <div>
           <Skeleton height={350} />
@@ -35,7 +35,7 @@ const Loading = () => {
         </div>
       </div>
       <div className="five wide column">
-        <div className="ui list">{CardLoading()}</div>
+        <div className="ui grid">{CardLoading()}</div>
       </div>
     </div>
   );
