@@ -17,8 +17,8 @@ class App extends React.Component {
       params: {
         part: "snippet",
         maxResults: 5,
-        key: process.env.REACT_APP_KEY,
         type: "video",
+        key: process.env.REACT_APP_KEY,
         q: term
       }
     });
